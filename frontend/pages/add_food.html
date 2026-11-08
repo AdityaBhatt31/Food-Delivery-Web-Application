@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Food - Admin</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <nav>
+        <h1>🍔 FoodApp - Admin</h1>
+        <div>
+            <a href="http://localhost/food-delivery/frontend/admin.html">Admin Panel</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Add New Food Item</h2>
+        
+        <form id="addFoodForm" enctype="multipart/form-data">
+            <input type="text" name="name" placeholder="Food Name" required>
+            <input type="number" name="price" placeholder="Price (₹)" step="0.01" required>
+            <select name="rid" id="restaurant_id" required></select>
+            <input type="file" name="image" accept="image/jpeg,image/png">
+            <button type="button" onclick="addNewFood()">Add Food Item</button>
+        </form>
+    </div>
+</body>
+</html>

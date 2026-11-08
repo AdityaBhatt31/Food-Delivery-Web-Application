@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - FoodApp</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="app.js" defer></script>
+    <style>
+        .cart-buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            animation: slideInUp 0.6s ease both;
+            animation-delay: 0.5s;
+        }
+        .cart-buttons button {
+            flex: 1;
+            min-width: 200px;
+        }
+        .cart-buttons button:last-child {
+            background: #22c55e;
+        }
+        .cart-buttons button:last-child:hover {
+            background: #16a34a;
+            box-shadow: 0 8px 24px rgba(34,197,94,.35);
+        }
+        .cart-total-section {
+            background: var(--gray-1);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            margin: 30px 0;
+            text-align: right;
+            animation: slideInUp 0.6s ease both;
+            animation-delay: 0.3s;
+        }
+        .cart-total-section h3 {
+            font-size: 1.4rem;
+            color: var(--dark);
+        }
+        #cart-total {
+            color: var(--red);
+            font-weight: 700;
+            animation: pulse 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>🍔 FoodApp</h1>
+        <div>
+            <a href="../index.html">Menu</a>
+            <a href="track.html">Track Order</a>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Your Cart</h2>
+        
+        <div id="cart-items"></div>
+        
+        <div class="cart-total-section">
+            <h3>Total: <span id="cart-total">₹0.00</span></h3>
+        </div>
+
+        <div class="cart-buttons">
+            <button onclick="placeOrderCOD()" style="">Place Order (Cash on Delivery)</button>
+            <button onclick="initiateRazorpayPayment()">Pay Now with Razorpay</button>
+        </div>
+    </div>
+
+    <script>
+        function logout() {
+            localStorage.removeItem("user_id");
+            localStorage.removeItem("order_id");
+            window.location.href = "../home.html";
+        }
+    </script>
+</body>
+</html>

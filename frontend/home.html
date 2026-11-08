@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodApp - Welcome</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <h1>🍔 FoodApp</h1>
+        <div>
+            <a href="pages/login.html">Login</a>
+            <a href="pages/register.html">Register</a>
+            <a href="http://localhost/food-delivery/frontend/admin.html">Admin</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Craving Something Delicious?</h1>
+            <p>Order from the best restaurants in your area and get it delivered fast.</p>
+            <a href="index.html" class="btn">Browse Menu</a>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 40px;">Why Choose FoodApp?</h2>
+        
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>Fast Delivery</h3>
+                <p>Food reaches your doorstep in under 30 minutes.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🍔</div>
+                <h3>Wide Selection</h3>
+                <p>From local favorites to popular chains — everything in one app.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💳</div>
+                <h3>Secure Payment</h3>
+                <p>Pay with Cash on Delivery or Razorpay securely.</p>
+            </div>
+        </div>
+
+        <!-- Popular Restaurants Teaser -->
+        <h2 style="margin: 60px 0 30px;">Popular Near You</h2>
+        <div id="food" class="food-grid"></div>   <!-- This will be populated by app.js -->
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="index.html" class="btn">View Full Menu →</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 FoodApp • Made with ❤️ in Dehradun</p>
+    </footer>
+
+    <script>
+        // Optional: Auto-load some food items on home page as teaser
+        document.addEventListener("DOMContentLoaded", () => {
+            // Reuse the same function from app.js to show a few items
+            loadFoodMenu();
+        });
+    </script>
+
+    <style>
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://source.unsplash.com/random/1600x900/?food') center/cover no-repeat;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+        }
+        .hero-content {
+            max-width: 700px;
+            padding: 0 20px;
+        }
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 3.2rem;
+            margin-bottom: 16px;
+        }
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        .feature-card {
+            background: white;
+            padding: 32px 24px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: var(--transition);
+        }
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+        }
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 24px;
+            margin-top: 80px;
+        }
+
+        /* Make food grid on home slightly smaller */
+        #food {
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
+    </style>
+</body>
+</html>

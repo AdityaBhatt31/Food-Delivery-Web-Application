@@ -1,0 +1,25 @@
+/*
+ * pages/style.css — re-exports the root stylesheet.
+ * All pages inside /pages/ link to this file, which
+ * in turn points up to the canonical style.css.
+ */
+@import url('../style.css');
+
+/* ── Page-level overrides (login / register have no nav) ── */
+body {
+  /* inherits everything from parent */
+}
+
+/* auth-footer helper (links below login box) */
+.auth-footer {
+  text-align: center;
+  margin-top: 18px;
+  font-size: .875rem;
+  color: rgba(255,255,255,.55);
+}
+.auth-footer a {
+  color: rgba(255,255,255,.85);
+  font-weight: 600;
+  text-decoration: none;
+}
+.auth-footer a:hover { text-decoration: underline; }

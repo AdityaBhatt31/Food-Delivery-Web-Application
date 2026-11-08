@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - FoodApp</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <nav>
+        <h1>🍔 FoodApp - Admin</h1>
+        <div>
+            <a href="index.html">View Site</a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <!-- Add Restaurant -->
+        <h2>Add New Restaurant</h2>
+        <form style="max-width: 500px;">
+            <input type="text" id="rname" placeholder="Restaurant Name" required>
+            <input type="text" id="rlocation" placeholder="Location (optional)">
+            <button type="button" onclick="addNewRestaurant()">Add Restaurant</button>
+        </form>
+
+        <hr style="margin: 40px 0;">
+
+        <!-- Add Food -->
+        <h2>Add Food Item</h2>
+        <a href="pages/add_food.html" class="btn">Go to Add Food Form</a>
+
+        <hr style="margin: 40px 0;">
+
+        <!-- Manage Orders -->
+        <h2>Manage User Orders</h2>
+        <input type="email" id="user_email" placeholder="Enter User Email" style="width: 300px;">
+        <button onclick="searchUserOrders()">Search Orders</button>
+        
+        <div id="orders_list" style="margin-top: 20px;"></div>
+
+        <div style="margin-top: 30px;">
+            <select id="order_status">
+                <option value="Pending">Pending</option>
+                <option value="Confirmed">Confirmed</option>
+                <option value="Out for Delivery">Out for Delivery</option>
+                <option value="Delivered">Delivered</option>
+            </select>
+            <button onclick="updateUserOrdersStatus()">Update Status</button>
+        </div>
+
+    </div>
+</body>
+</html>

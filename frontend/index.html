@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodApp - Order Now</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <nav>
+        <h1>🍔 FoodApp</h1>
+        <div>
+            <a href="pages/cart.html">Cart</a>
+            <a href="pages/track.html">Track Order</a>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Available Food Items</h2>
+        <div id="food" class="food-grid"></div>
+    </div>
+
+    <script>
+        function logout() {
+            localStorage.removeItem("user_id");
+            localStorage.removeItem("order_id");
+            window.location.href = "home.html";
+        }
+    </script>
+</body>
+</html>
